@@ -337,7 +337,7 @@ class APNewsCollector:
                 if datetime.now().timestamp() >= self.__timeout or not remaining_faults:
                     return
 
-                self.__selenium.wait_until_page_contains_element(element, 5)
+                self.__selenium.wait_until_element_is_enabled(element)
                 news = News(element, self.__search_phrase, self.__files)
 
                 if not news.date:
